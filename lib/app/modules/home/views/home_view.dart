@@ -107,25 +107,23 @@ class HomeView extends GetView<HomeController> {
             SizedBox(
               height: 20,
             ),
-            Container(
-              width: Get.width * 0.6,
-              child: Obx(
-                () => ElevatedButton(
-                  onPressed: controller.clickEnable.value
-                      ? () async {
-                          controller.pushNotif();
-                        }
-                      : null,
-                  style: ElevatedButton.styleFrom(
-                      primary: Colors.lightBlue,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(25),
-                      ),
-                      elevation: 5),
-                  child: Padding(
-                    padding: const EdgeInsets.all(15),
-                    child: Text('Notif On'),
+            Obx(
+              () => ElevatedButton(
+                onPressed: controller.clickEnable.value
+                    ? () async {
+                        controller.pushNotif();
+                      }
+                    : null,
+                style: ElevatedButton.styleFrom(
+                  primary: Colors.lightBlue,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(25),
                   ),
+                ),
+                child: Padding(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 50, vertical: 15),
+                  child: Text('Notif On'),
                 ),
               ),
             ),
